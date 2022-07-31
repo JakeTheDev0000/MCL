@@ -1,0 +1,3 @@
+312 : LATE  : your key does not match with the MASTERKEY
+36  : SETUP : your key  Beta Key..
+43  : SETUP : FATAL SYSTEM ERROR, BETA KEY ACTIVATION HAS BEEN DEACTIVATED

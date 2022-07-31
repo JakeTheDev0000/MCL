@@ -1,12 +1,16 @@
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Setup {
     static Scanner scanner = new Scanner(System.in);
+    static FileManger fileManger = new FileManger();
 
     Boolean inBeta;
 
     // Temp
-    String MASTER_BETA_KEY = "0000";
+    public final String MASTER_BETA_KEY = "0000";
 
 
     Setup(Boolean betaMode) {
@@ -17,7 +21,7 @@ public class Setup {
 
     void MCLSS() {
         String usrName;
-        String betaKey;
+        String betaKey = "None";
 
         System.out.println("Welcome to The MCL SetupStart\nYou are going to asnswer a couple a questions, it will be quick and its a one time thing");
         pressEnterToContinue();
@@ -44,11 +48,25 @@ public class Setup {
         }
         else {
             System.out.println("FATAL SYSTEM ERROR, BETA KEY ACTIVATION HAS BEEN DEACTIVATED");
-            System.exit(69);
+            System.exit(43);
         }
+
+        System.out.println("proccing info");
+        List<String> InfoList = new ArrayList<>();
+        InfoList.add(usrName);
+        InfoList.add(betaKey);
+        enterInfo(InfoList);
 
         System.out.println("MCLSS conplete");
 
+    }
+
+    private void enterInfo(List<String> InfoList) {
+        File saveDataFile = new File("SaveFiles/saveData.txt");
+
+        fileManger.editLine(2, "1", saveDataFile);
+        fileManger.editLine(4, InfoList.get(0), saveDataFile);
+        fileManger.editLine(6, InfoList.get(1), saveDataFile);
     }
 
     private void pressEnterToContinue() {
