@@ -1,17 +1,21 @@
 import java.util.Scanner;
 import java.util.Random;
 
-import java.io.File;
+
 
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
-    static Random rand = new Random();
+//    static Scanner scanner = new Scanner(System.in);
+//    static Random rand = new Random();
 
     // I made these classes
     static Setup setup = new Setup(true);
     static FileManger fileManger = new FileManger();
+//    static time time = new time();
+    static MCL mcl = new MCL();
 
     public static void main(String[] args) {
+//        test();
+
         if (needsToGoInMCLSS()) {
             setup.MCLSS();
         }
@@ -24,6 +28,8 @@ public class Main {
                 System.exit(312);
             }
             System.out.println("pass 2");
+            // ready to continue to mcl
+            mcl.MessyCodeLauncherStart();
         }
     }
 
@@ -31,4 +37,13 @@ public class Main {
         String data = fileManger.readFileLine(2, "SaveFiles/saveData.txt");
         return !data.equals("1");
     }
+
+//    static private void test(){
+//
+//        // execute any cmd command
+//        // System.out.println(executeCommand("cmd /c dir"));
+//
+//
+//        System.exit(0);
+//    }
 }

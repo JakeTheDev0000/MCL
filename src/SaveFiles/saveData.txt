@@ -1,6 +1,6 @@
 hasGoneInMCLSS
 1
 name
-jacobO
-betaKey
-00003
+Jacob O'Brien
+betaKey (must be 0000)
+0000

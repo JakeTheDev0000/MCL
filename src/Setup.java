@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Setup {
     static Scanner scanner = new Scanner(System.in);
     static FileManger fileManger = new FileManger();
+    static time time = new time();
 
     Boolean inBeta;
 
@@ -57,7 +58,14 @@ public class Setup {
         InfoList.add(betaKey);
         enterInfo(InfoList);
 
-        System.out.println("MCLSS conplete");
+        System.out.println("MCL-SS complete");
+        System.out.println("Thank you for using The MCL SetupStart");
+        time.waitSec(2);
+        System.out.println("Have a nice day");
+        System.out.println("make sure you restart the program to take effect\npress enter to continue \n");
+        pressEnterToContinue();
+        System.out.println("MCL-SS successfully completed at " + time.getTime() + " on " + time.getDate());
+        // wait 2 seconds
 
     }
 
